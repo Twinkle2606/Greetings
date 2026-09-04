@@ -22,10 +22,12 @@
       width: 100%;
       font-family: "DM Sans", sans-serif;
       color: var(--ink);
-      background-color: #ece7dc;
+      background-color: #b7c79b;
       background-image:
-        radial-gradient(circle at 15% 20%, rgba(255,255,255,.8), transparent 22rem),
-        repeating-linear-gradient(0deg, rgba(81, 66, 42, .035) 0, rgba(81, 66, 42, .035) 1px, transparent 1px, transparent 5px);
+        linear-gradient(180deg, #aebfce 0%, #c3cfb8 22%, #b7c79b 55%, #8fa46a 100%),
+        radial-gradient(circle at 15% 5%, rgba(255,255,255,.5), transparent 34rem),
+        radial-gradient(circle at 85% 100%, rgba(58, 74, 30, .3), transparent 34rem);
+      background-attachment: fixed;
     }
 
     .app-shell { width: 100%; }
@@ -153,7 +155,7 @@
     }
   </style>
  </head>
- <body data-template-id="__page-root" style="background: rgb(236, 231, 220);">
+ <body data-template-id="__page-root">
   <div class="app-shell min-h-screen px-4 py-8 sm:px-8 lg:px-12">
    <header class="workspace-heading mx-auto mb-8 flex w-full max-w-6xl flex-col justify-between gap-3 sm:flex-row sm:items-end reveal">
     <div>
