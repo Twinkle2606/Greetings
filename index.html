@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Branislav &amp; Dana Wedding Card</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #243129;
+      --moss: #365d4c;
+      --paper: #fffdf8;
+      --rose: #b96068;
+      --line: #ded6c7;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      width: 100%;
+      font-family: "DM Sans", sans-serif;
+      color: var(--ink);
+      background-color: #ece7dc;
+      background-image:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,.8), transparent 22rem),
+        repeating-linear-gradient(0deg, rgba(81, 66, 42, .035) 0, rgba(81, 66, 42, .035) 1px, transparent 1px, transparent 5px);
+    }
+
+    .app-shell { width: 100%; }
+
+    .display-face { font-family: "Fraunces", serif; }
+
+    .card-sheet {
+      position: relative;
+      overflow: hidden;
+      background: var(--paper);
+      box-shadow: 0 22px 60px rgba(63, 50, 29, .16);
+    }
+
+    .card-sheet::before,
+    .card-sheet::after {
+      content: "";
+      position: absolute;
+      width: 12rem;
+      height: 12rem;
+      border: 1px solid rgba(185, 96, 104, .25);
+      border-radius: 999px;
+      pointer-events: none;
+    }
+
+    .card-sheet::before { top: -6rem; right: -5rem; }
+    .card-sheet::after { bottom: -7rem; left: -5rem; }
+
+    .cover-photo {
+      filter: saturate(.75) sepia(.12);
+      mix-blend-mode: multiply;
+    }
+
+    .message-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .message-note {
+      position: relative;
+      min-height: 9rem;
+      border: 1px solid #e5ddce;
+      border-radius: 1rem;
+      padding: 1rem;
+      background: #fffefa;
+      box-shadow: 0 5px 14px rgba(76, 62, 40, .06);
+    }
+
+    .message-note:nth-child(3n + 2) {
+      background: #f4f6ee;
+      transform: rotate(.45deg);
+    }
+
+    .message-note:nth-child(3n + 3) {
+      background: #fff5f0;
+      transform: rotate(-.45deg);
+    }
+
+    .field-input {
+      width: 100%;
+      border: 1px solid #cdc5b7;
+      border-radius: .7rem;
+      background: #fffdf8;
+      padding: .78rem .9rem;
+      color: #243129;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .field-input:focus {
+      border-color: var(--moss);
+      box-shadow: 0 0 0 3px rgba(54, 93, 76, .15);
+    }
+
+    .btn-primary {
+      transition: transform .2s, box-shadow .2s, opacity .2s;
+    }
+
+    .btn-primary:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(54, 93, 76, .2);
+    }
+
+    .btn-primary:disabled { opacity: .65; cursor: wait; }
+
+    .reveal {
+      animation: reveal .7s both;
+    }
+
+    @keyframes reveal {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 640px) {
+      .message-grid { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      @page { size: A4 portrait; margin: 12mm; }
+
+      body {
+        background: #ffffff !important;
+        color: #243129;
+      }
+
+      .screen-only,
+      .workspace-heading { display: none !important; }
+
+      .app-shell { padding: 0 !important; }
+
+      .print-layout {
+        display: block !important;
+        max-width: none !important;
+      }
+
+      .card-sheet {
+        width: 100% !important;
+        max-width: none !important;
+        box-shadow: none !important;
+        border: 1px solid #ded6c7;
+        break-inside: avoid;
+      }
+
+      .message-note { break-inside: avoid; }
+    }
+  </style>
+ </head>
+ <body data-template-id="__page-root" style="background: rgb(236, 231, 220);">
+  <div class="app-shell min-h-screen px-4 py-8 sm:px-8 lg:px-12">
+   <header class="workspace-heading mx-auto mb-8 flex w-full max-w-6xl flex-col justify-between gap-3 sm:flex-row sm:items-end reveal">
+    <div>
+     <p data-template-id="workspace-kicker" class="canva-text mb-2 text-sm font-semibold uppercase tracking-[0.22em]" style="color: rgb(185, 96, 104); font-weight: 700; font-style: normal; font-size: 13px; letter-spacing: 0.12rem;">A shared keepsake</p>
+     <h1 data-template-id="workspace-title" class="canva-text display-face text-4xl font-semibold leading-tight sm:text-5xl" style="color: rgb(36, 49, 41); font-weight: 600; font-style: normal; font-size: 32px;">Global Group Card</h1>
+    </div>
+    <p data-template-id="workspace-subtitle" class="canva-text max-w-md text-sm leading-6 sm:text-right" style="color: rgb(85, 98, 91); font-weight: 400; font-style: normal; font-size: 15px; line-height: 1.5;">Collect warm wishes from every corner of your team, then print the finished card for a meaningful handover.</p>
+   </header>
+   <main class="print-layout mx-auto grid w-full max-w-6xl grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1.55fr)_minmax(290px,.75fr)]">
+    <section data-template-id="card-panel" class="canva-panel card-sheet reveal rounded-[1.8rem] p-5 sm:p-9" style="animation-delay: 0.1s; background: rgb(255, 253, 248);" aria-label="Printable group card">
+     <div class="relative z-10">
+      <div class="mb-7 flex items-start justify-between gap-4">
+       <p data-template-id="card-occasion" class="canva-tag rounded-full px-4 py-2 text-xs font-bold uppercase tracking-[0.18em]" style="background: rgb(232, 239, 232); color: rgb(54, 93, 76); font-weight: 700; font-style: normal; font-size: 12px; letter-spacing: 0.1rem;">On your wedding day</p>
+       <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em] text-[#63756b]">
+        <i data-lucide="globe-2" width="16" height="16" aria-hidden="true"></i> <span id="contribution-count" aria-live="polite">0 notes</span>
+       </div>
+      </div>
+      <div class="grid grid-cols-1 gap-7 md:grid-cols-[1.1fr_.9fr] md:items-center">
+       <div>
+        <h2 data-template-id="card-title" class="canva-text display-face mb-4 font-semibold leading-[1.05]" style="color: rgb(36, 49, 41); font-weight: 600; font-style: normal; font-size: 24px;">Congratulations, Branislav &amp; Dana</h2>
+        <p data-template-id="card-intro" class="canva-text max-w-lg text-base leading-7" style="color: rgb(79, 93, 85); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;">Across time zones, screens, and continents, we’re celebrating the beautiful wedding of Branislav and Dana. Here are a few heartfelt wishes from everyone lucky enough to know you.</p>
+       </div>
+       <div class="relative overflow-hidden rounded-2xl border-[6px] border-white shadow-md">
+        <img data-template-id="card-cover-image" loading="lazy" class="canva-image cover-photo h-48 w-full object-cover sm:h-56" src="https://images.pexels.com/photos/11741350/pexels-photo-11741350.jpeg" alt="Elegant still life of a blank card with red flowers casting shadows in soft light.">
+        <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#365d4c]/25 to-transparent"></div>
+       </div>
+      </div>
+      <div class="my-8 h-px bg-[#ded6c7]"></div>
+      <div id="empty-card-state" class="rounded-2xl border border-dashed border-[#cfc5b5] px-6 py-10 text-center">
+       <i data-lucide="pen-line" class="mx-auto mb-3 text-[#b96068]" width="27" height="27" aria-hidden="true"></i>
+       <p data-template-id="empty-card-message" class="canva-text text-base leading-7" style="color: rgb(104, 115, 109); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.5;">The first wedding wish will make this card come alive. Add a note for Branislav and Dana from your corner of the world.</p>
+      </div>
+      <div id="messages-list" class="message-grid" aria-live="polite"></div>
+      <div class="mt-8 border-t border-[#ded6c7] pt-5">
+       <p data-template-id="card-signoff" class="canva-text display-face text-xl font-semibold italic" style="color: rgb(54, 93, 76); font-weight: 600; font-style: normal; font-size: 16px;">With love and congratulations from everyone</p>
+      </div>
+     </div>
+    </section>
+    <aside class="screen-only space-y-5 reveal" style="animation-delay:.2s" aria-label="Card contribution tools">
+     <section data-template-id="contribution-panel" class="canva-panel rounded-[1.5rem] border border-[#d9d0c2] p-6 shadow-[0_10px_30px_rgba(74,57,34,.08)]" style="background: rgb(255, 253, 248);">
+      <div class="mb-6 flex items-start gap-3">
+       <div class="rounded-xl bg-[#e7eee8] p-2.5 text-[#365d4c]">
+        <i data-lucide="heart-handshake" width="21" height="21" aria-hidden="true"></i>
+       </div>
+       <div>
+        <h2 data-template-id="contribution-title" class="canva-text text-xl font-bold" style="color: rgb(36, 49, 41); font-weight: 700; font-style: normal; font-size: 20px;">Add your wedding wishes</h2>
+        <p data-template-id="contribution-helper" class="canva-text mt-1 text-sm leading-5" style="color: rgb(100, 112, 105); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.45;">Leave a heartfelt note for Branislav and Dana to treasure.</p>
+       </div>
+      </div>
+      <form id="message-form" novalidate="">
+       <div class="mb-4">
+        <label data-template-id="name-label" class="canva-text mb-1.5 block text-sm font-semibold" for="author-name" style="color: rgb(52, 66, 57); font-weight: 600; font-style: normal; font-size: 14px;">Your name</label> <input id="author-name" class="field-input" type="text" autocomplete="name" maxlength="80" required="">
+       </div>
+       <div class="mb-4">
+        <label data-template-id="country-label" class="canva-text mb-1.5 block text-sm font-semibold" for="country" style="color: rgb(52, 66, 57); font-weight: 600; font-style: normal; font-size: 14px;">Where are you writing from?</label> <input id="country" class="field-input" type="text" maxlength="80" required="">
+       </div>
+       <div class="mb-5">
+        <label data-template-id="message-label" class="canva-text mb-1.5 block text-sm font-semibold" for="message" style="color: rgb(52, 66, 57); font-weight: 600; font-style: normal; font-size: 14px;">Your message</label> <textarea id="message" class="field-input min-h-32 resize-y" maxlength="500" required=""></textarea>
+       </div>
+       <p id="form-status" class="mb-4 min-h-5 text-sm font-medium" aria-live="polite"></p>
+       <div class="flex gap-3">
+        <button id="submit-button" data-template-id="submit-button" class="canva-button btn-primary flex-1 rounded-xl px-4 py-3 text-sm font-bold" type="submit" style="background: rgb(54, 93, 76); color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 14px;">Add to the card</button> <button id="clear-button" data-template-id="clear-button" class="canva-button rounded-xl border border-[#cbc2b4] px-4 py-3 text-sm font-semibold" type="button" style="background: rgb(255, 253, 248); color: rgb(82, 96, 87); font-weight: 600; font-style: normal; font-size: 14px;">Clear</button>
+       </div>
+      </form>
+     </section>
+     <section data-template-id="share-panel" class="canva-panel rounded-[1.5rem] border border-[#d9d0c2] bg-[#f4f0e8] p-6 shadow-[0_10px_30px_rgba(74,57,34,.08)]" style="background: rgb(244, 240, 232);">
+      <div class="mb-4 flex items-start gap-3">
+       <div class="rounded-xl bg-[#e7eee8] p-2.5 text-[#365d4c]">
+        <i data-lucide="share-2" width="21" height="21" aria-hidden="true"></i>
+       </div>
+       <div>
+        <h2 data-template-id="share-title" class="canva-text text-xl font-bold" style="color: rgb(36, 49, 41); font-weight: 700; font-style: normal; font-size: 20px;">Share the card</h2>
+        <p data-template-id="share-helper" class="canva-text mt-1 text-sm leading-5" style="color: rgb(100, 112, 105); font-weight: 400; font-style: normal; font-size: 14px; line-height: 1.45;">Open this card from your Canva design, then copy its page link and send it to colleagues so they can add a wedding wish. Keep the design shared with anyone who needs access.</p>
+       </div>
+      </div><button id="copy-link-button" data-template-id="copy-link-button" class="canva-button btn-primary flex w-full items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-bold" type="button" style="background: rgb(54, 93, 76); color: rgb(255, 255, 255); font-weight: 700; font-size: 14px;"> <i data-lucide="link" width="16" height="16" aria-hidden="true"></i> <span data-template-id="copy-link-label" class="canva-text" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 14px;">Copy share link</span> </button>
+      <p id="share-status" class="mt-3 min-h-5 text-sm font-medium" aria-live="polite"></p>
+     </section>
+     <section data-template-id="print-panel" class="canva-panel rounded-[1.5rem] border border-[#d9d0c2] p-6 shadow-[0_10px_30px_rgba(74,57,34,.08)]" style="background: rgb(244, 240, 232);">
+      <div class="flex items-center justify-between gap-4">
+       <div>
+        <h2 data-template-id="print-title" class="canva-text text-lg font-bold" style="color: rgb(36, 49, 41); font-weight: 700; font-style: normal; font-size: 18px;">Ready to celebrate</h2>
+        <p data-template-id="print-helper" class="canva-text mt-1 text-sm leading-5" style="color: rgb(100, 112, 105); font-weight: 400; font-style: normal; font-size: 13px; line-height: 1.45;">Print the card once the wedding wishes are in. The contribution tools stay off the printed page.</p>
+       </div><button id="print-button" data-template-id="print-button" class="canva-button btn-primary shrink-0 rounded-xl px-4 py-3 text-sm font-bold" type="button" style="background: rgb(185, 96, 104); color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 14px;">Print card</button>
+      </div>
+     </section>
+    </aside>
+   </main>
+  </div>
+  <template id="message-note-template">
+   <article data-template-id="message-note" class="canva-card message-note">
+    <p data-template-id="message-note-text" class="canva-text whitespace-pre-wrap text-sm leading-6"></p>
+    <div class="mt-4 border-t border-[#ded6c7] pt-3">
+     <p data-template-id="message-note-author" class="canva-text text-sm font-bold"></p>
+     <p data-template-id="message-note-location" class="canva-text mt-0.5 text-xs"></p><time data-template-id="message-note-date" class="canva-text mt-1 block text-xs"></time>
+    </div>
+   </article>
+  </template>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyAiY-dxsesZsbx7CIstewB4-5y8Di6Tf4Y",
+      authDomain: "branislav-wedding-card.firebaseapp.com",
+      databaseURL: "https://branislav-wedding-card-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "branislav-wedding-card",
+      storageBucket: "branislav-wedding-card.firebasestorage.app",
+      messagingSenderId: "496250574003",
+      appId: "1:496250574003:web:21b04adb6d1d0051e08cc6"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const notesRef = ref(db, "notes");
+
+    const form = document.getElementById("message-form");
+    const submitButton = document.getElementById("submit-button");
+    const clearButton = document.getElementById("clear-button");
+    const statusEl = document.getElementById("form-status");
+    const listEl = document.getElementById("messages-list");
+    const emptyState = document.getElementById("empty-card-state");
+    const countEl = document.getElementById("contribution-count");
+    let records = [];
+    let dataReady = false;
+
+    function setStatus(message, type) {
+      statusEl.textContent = message;
+      statusEl.style.color = type === "error" ? "#a43d48" : type === "success" ? "#365d4c" : "#63756b";
+    }
+
+    function formatDate(iso) {
+      const date = new Date(iso);
+      return Number.isNaN(date.getTime())
+        ? ""
+        : date.toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" });
+    }
+
+    function createNote(record) {
+      const fragment = document.getElementById("message-note-template").content.cloneNode(true);
+      const note = fragment.querySelector("[data-template-id='message-note']");
+      note.dataset.recordId = record.__backendId;
+      note.querySelector("[data-template-id='message-note-text']").textContent = record.message;
+      note.querySelector("[data-template-id='message-note-author']").textContent = "— " + record.author_name;
+      note.querySelector("[data-template-id='message-note-location']").textContent = record.country;
+      const dateEl = note.querySelector("[data-template-id='message-note-date']");
+      dateEl.textContent = formatDate(record.created_at);
+      dateEl.dateTime = record.created_at;
+      return fragment;
+    }
+
+    function updateNote(note, record) {
+      note.querySelector("[data-template-id='message-note-text']").textContent = record.message;
+      note.querySelector("[data-template-id='message-note-author']").textContent = "— " + record.author_name;
+      note.querySelector("[data-template-id='message-note-location']").textContent = record.country;
+      const dateEl = note.querySelector("[data-template-id='message-note-date']");
+      dateEl.textContent = formatDate(record.created_at);
+      dateEl.dateTime = record.created_at;
+    }
+
+    function renderRecords(snapshotValue) {
+      const data = snapshotValue
+        ? Object.entries(snapshotValue).map(([key, value]) => ({ ...value, __backendId: key }))
+        : [];
+      records = data.sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
+      const existing = new Map([...listEl.children].map((el) => [el.dataset.recordId, el]));
+
+      records.forEach((record) => {
+        const existingNote = existing.get(record.__backendId);
+        if (existingNote) {
+          updateNote(existingNote, record);
+          existing.delete(record.__backendId);
+        } else {
+          listEl.appendChild(createNote(record));
+        }
+      });
+
+      existing.forEach((node) => node.remove());
+      emptyState.classList.toggle("hidden", records.length > 0);
+      countEl.textContent = records.length + (records.length === 1 ? " note" : " notes");
+    }
+
+    function initializeData() {
+      onValue(notesRef, (snapshot) => {
+        dataReady = true;
+        renderRecords(snapshot.val());
+      }, () => {
+        setStatus("The card could not connect right now. Please try again shortly.", "error");
+      });
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const authorName = document.getElementById("author-name").value.trim();
+      const country = document.getElementById("country").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      if (!authorName || !country || !message) {
+        setStatus("Please complete your name, location, and message.", "error");
+        return;
+      }
+
+      if (!dataReady) {
+        setStatus("The card is still connecting. Please try again in a moment.", "error");
+        return;
+      }
+
+      if (records.length >= 999) {
+        setStatus("This card has reached its 999-note limit. Please print or archive it.", "error");
+        return;
+      }
+
+      submitButton.disabled = true;
+      setStatus("Adding your note to the card…", "neutral");
+
+      try {
+        await push(notesRef, {
+          message: message,
+          author_name: authorName,
+          country: country,
+          created_at: new Date().toISOString()
+        });
+        form.reset();
+        setStatus("Your note has been added to the group card.", "success");
+      } catch (error) {
+        setStatus("Your note could not be added. Please try again.", "error");
+      } finally {
+        submitButton.disabled = false;
+      }
+    });
+
+    clearButton.addEventListener("click", () => {
+      form.reset();
+      setStatus("", "neutral");
+      document.getElementById("author-name").focus();
+    });
+
+    document.getElementById("print-button").addEventListener("click", () => {
+      window.print();
+    });
+
+    document.getElementById("copy-link-button").addEventListener("click", async () => {
+      const shareStatus = document.getElementById("share-status");
+      const shareUrl = window.location.href;
+      try {
+        await navigator.clipboard.writeText(shareUrl);
+        shareStatus.textContent = "Link copied — send it to your colleagues.";
+        shareStatus.style.color = "#365d4c";
+      } catch (error) {
+        shareStatus.textContent = "Copy was unavailable. Please copy the page link from your browser.";
+        shareStatus.style.color = "#a43d48";
+      }
+    });
+
+    lucide.createIcons();
+    initializeData();
+  </script>
+ 
+</body></html>
