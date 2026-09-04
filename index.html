@@ -54,8 +54,7 @@
     .card-sheet::after { bottom: -7rem; left: -5rem; }
 
     .cover-photo {
-      filter: saturate(.75) sepia(.12);
-      mix-blend-mode: multiply;
+      filter: saturate(1.05) brightness(1.15) contrast(1.02);
     }
 
     .message-grid {
@@ -172,19 +171,17 @@
         <i data-lucide="globe-2" width="16" height="16" aria-hidden="true"></i> <span id="contribution-count" aria-live="polite">0 notes</span>
        </div>
       </div>
-      <div class="grid grid-cols-1 gap-7 md:grid-cols-[1.1fr_.9fr] md:items-center">
+      <div class="grid grid-cols-1 gap-7 md:grid-cols-[.9fr_1.3fr] md:items-center">
        <div>
         <h2 data-template-id="card-title" class="canva-text display-face mb-4 font-semibold leading-[1.05]" style="color: rgb(36, 49, 41); font-weight: 600; font-style: normal; font-size: 24px;">Congratulations, Branislav &amp; Dana</h2>
         <p data-template-id="card-intro" class="canva-text max-w-lg text-base leading-7" style="color: rgb(79, 93, 85); font-weight: 400; font-style: normal; font-size: 16px; line-height: 1.6;">Across time zones, screens, and continents, we’re celebrating the beautiful wedding of Branislav and Dana. Here are a few heartfelt wishes from everyone lucky enough to know you.</p>
        </div>
-       <div class="grid grid-cols-2 gap-2">
+       <div class="grid grid-cols-2 gap-3">
         <div class="relative overflow-hidden rounded-2xl border-[6px] border-white shadow-md">
          <img loading="lazy" class="canva-image cover-photo aspect-[3/4] w-full object-cover" src="images/first-dance.jpg" alt="Branislav and Dana sharing their first dance under string lights.">
-         <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#365d4c]/25 to-transparent"></div>
         </div>
         <div class="relative overflow-hidden rounded-2xl border-[6px] border-white shadow-md">
          <img loading="lazy" class="canva-image cover-photo aspect-[3/4] w-full object-cover" src="images/reception-evening.jpg" alt="Branislav and Dana seated together at their evening reception.">
-         <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#365d4c]/25 to-transparent"></div>
         </div>
        </div>
       </div>
