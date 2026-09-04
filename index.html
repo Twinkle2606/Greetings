@@ -178,10 +178,10 @@
        </div>
        <div class="grid grid-cols-2 gap-3">
         <div class="relative overflow-hidden rounded-2xl border-[6px] border-white shadow-md">
-         <img loading="lazy" class="canva-image cover-photo aspect-[3/4] w-full object-cover" src="images/first-dance.jpg" alt="Branislav and Dana sharing their first dance under string lights.">
+         <img class="canva-image cover-photo aspect-[3/4] w-full object-cover" src="images/first-dance.jpg" alt="Branislav and Dana sharing their first dance under string lights.">
         </div>
         <div class="relative overflow-hidden rounded-2xl border-[6px] border-white shadow-md">
-         <img loading="lazy" class="canva-image cover-photo aspect-[3/4] w-full object-cover" src="images/reception-evening.jpg" alt="Branislav and Dana seated together at their evening reception.">
+         <img class="canva-image cover-photo aspect-[3/4] w-full object-cover" src="images/reception-evening.jpg" alt="Branislav and Dana seated together at their evening reception.">
         </div>
        </div>
       </div>
@@ -401,7 +401,9 @@
       document.getElementById("author-name").focus();
     });
 
-    document.getElementById("print-button").addEventListener("click", () => {
+    document.getElementById("print-button").addEventListener("click", async () => {
+      const images = Array.from(document.querySelectorAll(".card-sheet img"));
+      await Promise.all(images.map((img) => img.decode().catch(() => {})));
       window.print();
     });
 
