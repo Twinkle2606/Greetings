@@ -70,7 +70,18 @@
       border-radius: 1rem;
       padding: 1rem;
       background: #fffefa;
-      box-shadow: 0 5px 14px rgba(76, 62, 40, .06);
+      box-shadow: 0 14px 28px rgba(76, 62, 40, .14), 0 3px 8px rgba(76, 62, 40, .08);
+      transition: box-shadow .25s ease, transform .25s ease;
+    }
+
+    .message-note:hover {
+      box-shadow: 0 20px 38px rgba(76, 62, 40, .2), 0 5px 12px rgba(76, 62, 40, .1);
+    }
+
+    .message-note-text {
+      font-family: "Fraunces", serif;
+      font-style: italic;
+      font-size: 1.05rem;
     }
 
     .message-note:nth-child(3n + 2) {
@@ -78,9 +89,21 @@
       transform: rotate(.45deg);
     }
 
+    .message-note:nth-child(3n + 2):hover {
+      transform: rotate(.45deg) translateY(-3px);
+    }
+
     .message-note:nth-child(3n + 3) {
       background: #fff5f0;
       transform: rotate(-.45deg);
+    }
+
+    .message-note:nth-child(3n + 3):hover {
+      transform: rotate(-.45deg) translateY(-3px);
+    }
+
+    .message-note:nth-child(3n + 1):hover {
+      transform: translateY(-3px);
     }
 
     .field-input {
@@ -249,7 +272,7 @@
   <template id="message-note-template">
    <article data-template-id="message-note" class="canva-card message-note">
     <button data-template-id="message-note-delete" class="screen-only absolute right-3 top-3 text-xs font-semibold text-[#a43d48]" type="button" title="Delete this note">✕</button>
-    <p data-template-id="message-note-text" class="canva-text whitespace-pre-wrap text-sm leading-6"></p>
+    <p data-template-id="message-note-text" class="canva-text message-note-text whitespace-pre-wrap leading-6"></p>
     <div class="mt-4 border-t border-[#ded6c7] pt-3">
      <p data-template-id="message-note-author" class="canva-text text-sm font-bold"></p>
      <p data-template-id="message-note-location" class="canva-text mt-0.5 text-xs"></p><time data-template-id="message-note-date" class="canva-text mt-1 block text-xs"></time>
